@@ -14,8 +14,8 @@ class AgentSimple:
 
     def choose_action(self, state):
         if np.random.rand() <= self.epsilon:
-            return random.choice([0, 1, 2])  # Exploration
-        return np.argmax(self.q_table[state])  # Exploitation
+            return random.choice([0, 1, 2]) 
+        return np.argmax(self.q_table[state]) 
 
     def learn(self, state, action, reward, next_state):
         q_update = reward + self.discount_factor * np.max(self.q_table[next_state])
